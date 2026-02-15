@@ -605,17 +605,16 @@ header {
 .section-title {
     text-align: center;
     font-size: 2.8rem;
-    /* Slightly smaller */
     margin-bottom: 3rem;
-    /* Reduced from 4rem */
     position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    /* Changed from inline-block to block for simpler centering */
+    /* Removed left/transform centering hack as it caused overflow issues */
+    margin-left: auto;
+    margin-right: auto;
     color: var(--white);
     letter-spacing: -1px;
     width: 100%;
-    /* Ensure it takes full width of container if needed, but centering handles it */
 }
 
 .section-title::after {
@@ -1093,5 +1092,165 @@ footer {
         background: rgba(0, 0, 0, 0.95);
         padding: 2rem;
         border-bottom: 1px solid var(--neon-cyan);
+    }
+}
+
+/* Tablet and Smaller Desktop */
+@media (max-width: 768px) {
+    :root {
+        --container-width: 100%;
+    }
+
+    /* Typography Adjustments */
+    .name {
+        font-size: 2.8rem;
+        white-space: normal;
+        /* Allow wrapping on small screens if needed */
+    }
+
+    .role {
+        font-size: 1.5rem;
+        min-height: auto;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding-top: 100px;
+        min-height: auto;
+        padding-bottom: 4rem;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text {
+        padding-right: 0;
+        margin-top: 2rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .btn-secondary,
+    .social-3d-btn {
+        margin-left: 0;
+    }
+
+    .hero-image-container {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .hero-image {
+        width: 280px;
+        height: 280px;
+    }
+
+    /* About Section */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    /* Education Section */
+    .education-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    .edu-logo {
+        margin: 0 auto;
+    }
+
+    /* Certifications & Skills */
+    .certs-grid,
+    .skills-wrapper {
+        grid-template-columns: 1fr;
+        /* Stack singly on tablets/mobile */
+    }
+
+    /* Contact Section */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1.2rem;
+    }
+
+    .name {
+        font-size: 2.2rem;
+    }
+
+    .role {
+        font-size: 1.3rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        /* Full width buttons on mobile */
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .btn-secondary,
+    .social-3d-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Adjust strengths list for very small screens */
+    .strengths-list li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .strengths-list li i {
+        margin-bottom: 0.5rem;
+    }
+
+    .education-card {
+        padding: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
     }
 }
