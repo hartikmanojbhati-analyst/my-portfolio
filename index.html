@@ -55,12 +55,12 @@
                         B.Tech CSE Student passionate about data analytics and visualization.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn-3d-primary">Contact Me</a>
+                        <a href="#contact" class="btn-data-block">Contact Me</a>
                         <a href="https://www.linkedin.com/in/bhati-hartik-manoj" target="_blank"
-                            class="btn btn-secondary social-3d-btn linkedin"><i class="fab fa-linkedin"></i>
+                            class="btn-data-block"><i class="fab fa-linkedin" style="margin-right: 8px;"></i>
                             LinkedIn</a>
-                        <a href="https://github.com/hartikmanojbhati-analyst" target="_blank"
-                            class="btn btn-secondary social-3d-btn github"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/hartikmanojbhati-analyst" target="_blank" class="btn-data-block"><i
+                                class="fab fa-github" style="margin-right: 8px;"></i> GitHub</a>
                     </div>
                 </div>
                 <div class="hero-bg-elements">
@@ -70,6 +70,13 @@
                     <div class="data-item p4"><i class="fas fa-chart-column"></i></div> <!-- Power BI Proxy -->
                     <div class="data-item p5"><i class="fab fa-aws"></i></div> <!-- AWS -->
                 </div>
+                <!-- 3D Floating Chart Decoration -->
+                <div class="chart-decoration">
+                    <div class="floating-chart-bar"></div>
+                    <div class="floating-chart-bar"></div>
+                    <div class="floating-chart-bar"></div>
+                </div>
+
                 <div class="hero-image-container animate-on-scroll">
                     <!-- User photo -->
                     <img src="profile.jpg" alt="Bhati Hartik Manoj" class="hero-image">
@@ -143,15 +150,17 @@
         <section id="education" class="section education-section">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">Education</h2>
-                <div class="education-card animate-on-scroll">
-                    <div class="edu-logo">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <div class="edu-info">
-                        <h3>Bachelor of Technology (B.Tech)</h3>
-                        <h4>Parul University, Vadodara, Gujarat</h4>
-                        <p class="edu-date"><i class="far fa-calendar-alt"></i> 08/2023 - 05/2027</p>
-                        <p class="edu-major">Computer Science Engineering</p>
+                <div class="card-3d-wrapper animate-on-scroll">
+                    <div class="education-card card-3d-tilt">
+                        <div class="edu-logo">
+                            <img src="parul_university.png" alt="Parul University Logo">
+                        </div>
+                        <div class="edu-info">
+                            <h3>Bachelor of Technology (B.Tech)</h3>
+                            <h4>Parul University, Vadodara, Gujarat</h4>
+                            <p class="edu-date"><i class="far fa-calendar-alt"></i> 08/2023 - 05/2027</p>
+                            <p class="edu-major">Computer Science Engineering</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -163,33 +172,39 @@
                 <h2 class="section-title animate-on-scroll">Certifications</h2>
                 <div class="certs-grid">
                     <!-- AWS -->
-                    <div class="cert-card animate-on-scroll">
-                        <div class="cert-icon aws"><i class="fab fa-aws"></i></div>
-                        <div class="cert-details">
-                            <h3>Data Engineering on AWS – Foundations</h3>
-                            <span class="issuer">Amazon Web Services (AWS)</span>
-                            <span class="date">Issued Jan 2026</span>
-                            <p class="skills-tags">Data Engineering, Cloud Computing</p>
+                    <div class="card-3d-wrapper animate-on-scroll">
+                        <div class="cert-card card-3d-tilt">
+                            <div class="cert-icon aws"><i class="fab fa-aws"></i></div>
+                            <div class="cert-details">
+                                <h3>Data Engineering on AWS – Foundations</h3>
+                                <span class="issuer">Amazon Web Services (AWS)</span>
+                                <span class="date">Issued Jan 2026</span>
+                                <p class="skills-tags">Data Engineering, Cloud Computing</p>
+                            </div>
                         </div>
                     </div>
                     <!-- IBM -->
-                    <div class="cert-card animate-on-scroll">
-                        <div class="cert-icon ibm"><i class="fas fa-server"></i></div>
-                        <div class="cert-details">
-                            <h3>Data Fundamentals</h3>
-                            <span class="issuer">IBM</span>
-                            <span class="date">Issued Jan 2026</span>
-                            <p class="skills-tags">Data Science, Data Cleaning, Analytics</p>
+                    <div class="card-3d-wrapper animate-on-scroll">
+                        <div class="cert-card card-3d-tilt">
+                            <div class="cert-icon ibm"><i class="fas fa-server"></i></div>
+                            <div class="cert-details">
+                                <h3>Data Fundamentals</h3>
+                                <span class="issuer">IBM</span>
+                                <span class="date">Issued Jan 2026</span>
+                                <p class="skills-tags">Data Science, Data Cleaning, Analytics</p>
+                            </div>
                         </div>
                     </div>
                     <!-- Cisco -->
-                    <div class="cert-card animate-on-scroll">
-                        <div class="cert-icon cisco"><i class="fas fa-network-wired"></i></div>
-                        <div class="cert-details">
-                            <h3>Data Analytics Essentials</h3>
-                            <span class="issuer">Cisco Networking Academy</span>
-                            <span class="date">Issued Jan 2026</span>
-                            <p class="skills-tags">Excel, SQL, Data Visualization, Ethics</p>
+                    <div class="card-3d-wrapper animate-on-scroll">
+                        <div class="cert-card card-3d-tilt">
+                            <div class="cert-icon cisco"><i class="fas fa-network-wired"></i></div>
+                            <div class="cert-details">
+                                <h3>Data Analytics Essentials</h3>
+                                <span class="issuer">Cisco Networking Academy</span>
+                                <span class="date">Issued Jan 2026</span>
+                                <p class="skills-tags">Excel, SQL, Data Visualization, Ethics</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -237,43 +252,44 @@
         <section id="contact" class="section contact-section">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">Get In Touch</h2>
-                <div class="contact-content">
+                <div class="contact-content centered-contact">
                     <div class="contact-info animate-on-scroll">
                         <p class="contact-pitch">
                             Feel free to connect if you're interested in collaborating on data analytics projects or
                             discussing opportunities!
                         </p>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h5>Email Me</h5>
-                                <a href="mailto:hartikmanojbhati@gmail.com">hartikmanojbhati@gmail.com</a>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h5>Email Me</h5>
+                                    <a href="mailto:hartikmanojbhati@gmail.com">hartikmanojbhati@gmail.com</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h5>Call Me</h5>
-                                <a href="tel:+919773097275">+91 9773097275</a>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h5>Call Me</h5>
+                                    <a href="tel:+919773097275">+91 9773097275</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h5>Location</h5>
-                                <p>Vadodara, Gujarat, India</p>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h5>Location</h5>
+                                    <p>Vadodara, Gujarat, India</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="social-links">
-                            <!-- Social links are now integrated into contact items or hero buttons, keeping it clean -->
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin"></i>
+                                <div>
+                                    <h5>LinkedIn</h5>
+                                    <a href="https://www.linkedin.com/in/bhati-hartik-manoj" target="_blank">Connect on
+                                        LinkedIn</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <form class="contact-form animate-on-scroll">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
                 </div>
             </div>
         </section>
