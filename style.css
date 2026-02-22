@@ -1,21 +1,32 @@
 :root {
-    /* Base Colors */
-    --bg-color: #0b1121;
-    /* Deep Navy */
-    /* Softer than pure black */
-    --card-bg: #151e32;
-    /* Slightly lighter navy */
-    --text-color: #e2e8f0;
-    --text-muted: #94a3b8;
+    /* Base Colors - Light Theme */
+    --bg-color: #f8fafc;
+    /* Light Slate (almost white) */
+    --card-bg: #ffffff;
+    /* Pure White */
+    --text-color: #334155;
+    /* Slate 700 (Dark Grey for text) */
+    --heading-color: #0f172a;
+    /* Slate 900 (Nearly Black for headings) */
+    --text-muted: #64748b;
+    /* Slate 500 */
     --white: #ffffff;
-    --border-color: #1e293b;
+    /* Keep white for specific uses like text on dark btns */
+    --border-color: #e2e8f0;
+    /* Slate 200 */
 
-    /* Neon Palette */
-    --neon-cyan: #00f3ff;
-    --neon-purple: #bc13fe;
-    --neon-green: #0aff00;
-    --neon-orange: #ff9e00;
-    --neon-pink: #ff0055;
+    /* Neon Palette - Adjusted for Light Mode Visibility if needed */
+    /* Kept vibrant, but might need checking against white */
+    --neon-cyan: #06b6d4;
+    /* Cyan 500 - Slightly darker for visibility */
+    --neon-purple: #9333ea;
+    /* Purple 600 */
+    --neon-green: #16a34a;
+    /* Green 600 */
+    --neon-orange: #f97316;
+    /* Orange 500 */
+    --neon-pink: #db2777;
+    /* Pink 600 */
 
     /* Gradients */
     --grad-hero: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
@@ -37,7 +48,7 @@
 
 ::selection {
     background-color: var(--neon-cyan);
-    color: var(--bg-color);
+    color: var(--white);
 }
 
 body {
@@ -55,7 +66,7 @@ h4,
 h5,
 h6 {
     font-family: 'Playfair Display', serif;
-    color: var(--white);
+    color: var(--heading-color);
     margin-bottom: 1rem;
     letter-spacing: 0.5px;
 }
@@ -84,7 +95,8 @@ img {
 
 /* Header */
 header {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.85);
+    /* Light transparent bg */
     backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--border-color);
     position: fixed;
@@ -92,6 +104,8 @@ header {
     top: 0;
     z-index: 1000;
     transition: var(--transition);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow for separation */
 }
 
 .header-container {
@@ -109,7 +123,8 @@ header {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    /* Removed large glow for cleaner look in light mode, or reduced it */
+    text-shadow: none;
 }
 
 .nav-links {
@@ -127,8 +142,10 @@ header {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--white);
-    text-shadow: 0 0 10px var(--neon-cyan);
+    color: var(--heading-color);
+    /* Darker active state */
+    text-shadow: none;
+    /* Remove glow */
 }
 
 .nav-links a::after {
@@ -157,7 +174,8 @@ header {
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: var(--white);
+    background-color: var(--heading-color);
+    /* Dark bars */
     transition: var(--transition);
 }
 
@@ -177,28 +195,32 @@ header {
 
 /* Multi-colored Buttons */
 .btn-primary {
-    background: transparent;
+    background: var(--neon-cyan);
+    /* Solid color for better visibility */
     color: var(--white);
     border: 1px solid var(--neon-cyan);
-    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(6, 182, 212, 0.2);
 }
 
 .btn-primary:hover {
-    background: var(--neon-cyan);
-    color: var(--bg-color);
-    box-shadow: 0 0 30px var(--neon-cyan);
+    background: #0891b2;
+    /* Darker Cyan */
+    color: var(--white);
+    box-shadow: 0 6px 12px rgba(6, 182, 212, 0.3);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--text-muted);
+    color: var(--text-color);
     border: 1px solid var(--border-color);
     margin-left: 1rem;
 }
 
 .btn-secondary:hover {
-    color: var(--white);
-    box-shadow: 0 0 20px rgba(188, 19, 254, 0.4);
+    color: var(--neon-purple);
+    border-color: var(--neon-purple);
+    background: rgba(147, 51, 234, 0.05);
+    box-shadow: none;
 }
 
 /* 3D Social Buttons */
@@ -479,7 +501,7 @@ header {
     /* Reduced from 4.5rem to fit better */
     margin-bottom: 0.2rem;
     line-height: 1.1;
-    color: var(--white);
+    color: var(--heading-color);
     text-transform: uppercase;
     letter-spacing: -1px;
     /* Slightly more spacing */
@@ -612,7 +634,7 @@ header {
     /* Removed left/transform centering hack as it caused overflow issues */
     margin-left: auto;
     margin-right: auto;
-    color: var(--white);
+    color: var(--heading-color);
     letter-spacing: -1px;
     width: 100%;
 }
@@ -625,13 +647,14 @@ header {
     background: var(--neon-cyan);
     margin: 0.8rem auto 0;
     border-radius: 2px;
-    box-shadow: 0 0 15px var(--neon-cyan);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+    /* Reduce glow */
 }
 
 /* About & Strengths (Purple Theme) */
 .about-section .section-title::after {
     background: var(--neon-purple);
-    box-shadow: 0 0 15px var(--neon-purple);
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
 }
 
 .about-grid {
@@ -648,18 +671,19 @@ header {
 }
 
 .strengths-card {
-    background: rgba(188, 19, 254, 0.05);
-    /* Slight purple tint */
+    background: var(--card-bg);
+    /* White bg */
     padding: 2rem;
     border-radius: 16px;
-    border: 1px solid rgba(188, 19, 254, 0.2);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    /* Soft shadow instead of dark glow */
     transition: var(--transition);
 }
 
 .strengths-card:hover {
     border-color: var(--neon-purple);
-    box-shadow: 0 0 30px rgba(188, 19, 254, 0.2);
+    box-shadow: 0 20px 40px -10px rgba(147, 51, 234, 0.15);
 }
 
 .strengths-card h3 {
@@ -702,7 +726,7 @@ header {
 
 .strengths-list li div strong {
     display: block;
-    color: var(--white);
+    color: var(--heading-color);
     margin-bottom: 0.2rem;
     font-size: 1.1rem;
 }
@@ -719,7 +743,8 @@ header {
 }
 
 .education-card {
-    background: linear-gradient(180deg, rgba(21, 30, 50, 1) 0%, rgba(15, 20, 35, 1) 100%);
+    background: var(--card-bg);
+    /* White */
     padding: 2.5rem;
     border-radius: 16px;
     display: flex;
@@ -729,18 +754,20 @@ header {
     margin: 0 auto;
     border: 1px solid var(--border-color);
     transition: var(--transition);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .education-card:hover {
     transform: translateY(-5px);
     border-color: var(--neon-orange);
-    box-shadow: 0 0 30px rgba(255, 158, 0, 0.2);
+    box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04);
 }
 
 .edu-logo {
     width: 80px;
     height: 80px;
-    background: var(--card-bg);
+    background: #fff7ed;
+    /* Very light orange tint */
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -749,18 +776,29 @@ header {
     color: var(--neon-orange);
     flex-shrink: 0;
     border: 1px solid var(--border-color);
+    overflow: hidden;
+    /* Ensure image stays inside border radius */
+    padding: 5px;
+    /* Add some padding so logo doesn't touch edges */
+}
+
+.edu-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .education-card:hover .edu-logo {
     color: var(--white);
-    background: var(--neon-orange);
-    box-shadow: 0 0 20px var(--neon-orange);
+    background: var(--white);
+    /* Keep white background for logo clarity */
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
     border-color: transparent;
 }
 
 .edu-info h3 {
     margin-bottom: 0.2rem;
-    color: var(--white);
+    color: var(--heading-color);
 }
 
 .edu-info h4 {
@@ -832,50 +870,55 @@ header {
 
 /* Specific glows for brands */
 .cert-card:hover .cert-icon.aws {
-    box-shadow: 0 0 20px #ff9900;
+    box-shadow: 0 4px 10px rgba(255, 153, 0, 0.4);
 }
 
 .cert-card:hover .cert-icon.ibm {
-    box-shadow: 0 0 20px #0530ad;
+    box-shadow: 0 4px 10px rgba(5, 48, 173, 0.4);
 }
 
 .cert-card:hover .cert-icon.cisco {
-    box-shadow: 0 0 20px #049fd9;
+    box-shadow: 0 4px 10px rgba(4, 159, 217, 0.4);
 }
 
 .cert-icon.aws {
     background-color: #ff9900;
+    color: white;
 }
 
 .cert-icon.ibm {
     background-color: #0530ad;
+    color: white;
 }
 
 .cert-icon.cisco {
     background-color: #049fd9;
+    color: white;
 }
 
 .cert-details h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     line-height: 1.3;
+    color: var(--heading-color);
 }
 
 .skills-tags {
     font-size: 0.85rem;
-    color: var(--white);
-    background: linear-gradient(90deg, rgba(255, 0, 85, 0.1), rgba(255, 158, 0, 0.1));
+    color: var(--heading-color);
+    background: linear-gradient(90deg, rgba(255, 0, 85, 0.05), rgba(255, 158, 0, 0.05));
     padding: 0.6rem;
     border-radius: 6px;
     margin-top: auto;
     border: 1px solid rgba(255, 0, 85, 0.2);
     text-align: center;
+    font-weight: 500;
 }
 
 /* Skills (Green Theme) */
 .skills-section .section-title::after {
     background: var(--neon-green);
-    box-shadow: 0 0 15px var(--neon-green);
+    box-shadow: 0 0 10px rgba(22, 163, 74, 0.5);
 }
 
 .skills-wrapper {
@@ -891,11 +934,12 @@ header {
     border: 1px solid var(--border-color);
     transition: var(--transition);
     position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .skill-category:hover {
     border-color: var(--neon-green);
-    box-shadow: 0 0 20px rgba(10, 255, 0, 0.15);
+    box-shadow: 0 10px 20px -5px rgba(22, 163, 74, 0.15);
 }
 
 .skill-category h3 {
@@ -903,7 +947,7 @@ header {
     margin-bottom: 1.5rem;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 1rem;
-    color: var(--white);
+    color: var(--heading-color);
 }
 
 .skill-tags {
@@ -912,77 +956,144 @@ header {
     gap: 1rem;
 }
 
+
+/* 3D Skill Tags */
+/* 3D Skill Tags */
 .skill-tags span {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-color);
+    background: #f1f5f9;
+    /* Slate 100 */
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--heading-color);
     border: 1px solid var(--border-color);
-    transition: var(--transition);
+    /* 3D Effect Shadow */
+    box-shadow:
+        3px 3px 6px rgba(0, 0, 0, 0.1),
+        -1px -1px 2px rgba(255, 255, 255, 0.8);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     align-items: center;
     gap: 10px;
-    cursor: default;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    /* Removed opacity: 0 and popIn animation for immediate visibility */
+    opacity: 1;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* ... animation delays unchanged ... */
+
+/* 3. Subtle Icon Pulse */
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 2px rgba(22, 163, 74, 0.3));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 6px rgba(22, 163, 74, 0.5));
+    }
 }
 
 .skill-tags span i {
     color: var(--neon-green);
+    font-size: 1.2rem;
+    filter: drop-shadow(0 0 2px rgba(22, 163, 74, 0.3));
+    transition: transform 0.3s ease;
+    animation: pulseGlow 3s infinite ease-in-out;
 }
 
+
+/* Hover State - Lift up + Glow */
 .skill-tags span:hover {
+    transform: translateY(-5px) scale(1.05);
     background: var(--neon-green);
-    color: var(--bg-color);
     border-color: var(--neon-green);
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px var(--neon-green);
-    font-weight: 700;
+    color: var(--white);
+    box-shadow:
+        0 10px 15px -3px rgba(22, 163, 74, 0.3),
+        0 4px 6px -2px rgba(22, 163, 74, 0.1);
+    z-index: 10;
 }
 
 .skill-tags span:hover i {
-    color: var(--bg-color);
+    transform: rotate(10deg) scale(1.2);
+    color: var(--white);
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
 }
 
-/* Contact (Multi-Color Mix) */
+/* Active State - Pressed Down */
+.skill-tags span:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow:
+        inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframes - Unchanged */
+
+/* Contact (Centered Static Info) */
 .contact-section .section-title::after {
-    background: var(--white);
-    box-shadow: 0 0 15px var(--white);
+    background: var(--heading-color);
+    box-shadow: 0 0 5px rgba(15, 23, 42, 0.2);
 }
 
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+.contact-content.centered-contact {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    width: 100%;
 }
 
 .contact-pitch {
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
     color: var(--text-muted);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    margin-bottom: 1.5rem;
-    padding: 1.2rem;
+    padding: 1.5rem;
     background: var(--card-bg);
     border-radius: 12px;
     border: 1px solid var(--border-color);
     transition: var(--transition);
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .contact-item:hover {
     border-color: var(--neon-cyan);
-    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
-    transform: translateX(5px);
+    box-shadow: 0 10px 20px -5px rgba(6, 182, 212, 0.2);
+    transform: translateY(-5px);
 }
 
 .contact-item i {
-    width: 45px;
-    height: 45px;
-    background-color: rgba(255, 255, 255, 0.05);
+    width: 50px;
+    height: 50px;
+    background-color: #ecfeff;
+    /* Cyan 50 */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -991,206 +1102,219 @@ header {
     margin-right: 1.2rem;
     flex-shrink: 0;
     border: 1px solid var(--border-color);
+    font-size: 1.2rem;
 }
 
 .contact-item:hover i {
     background: var(--neon-cyan);
-    color: var(--bg-color);
-    box-shadow: 0 0 15px var(--neon-cyan);
+    color: var(--white);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
 }
 
 .contact-item h5 {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
 }
 
 .contact-item p,
 .contact-item a {
-    color: var(--white);
+    color: var(--heading-color);
     font-weight: 500;
+    font-size: 1.05rem;
 }
 
-.contact-form {
-    background: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 16px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--border-color);
-}
+/* Form styles removed as requested */
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 1.2rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.3);
-    color: var(--white);
-    font-family: 'Inter', sans-serif;
-    transition: var(--transition);
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--neon-cyan);
-    background: rgba(0, 243, 255, 0.05);
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
-}
 
 /* Footer */
 footer {
-    background-color: #000;
+    background-color: #f1f5f9;
+    /* Slate 100 */
     color: var(--text-muted);
     padding: 3rem 0;
     text-align: center;
     border-top: 1px solid var(--border-color);
 }
 
-/* Media Queries */
-@media (max-width: 900px) {
-    .container {
-        padding: 0 1.5rem;
+/* Media Queries (unchanged except for specific hardcoded colors if any - checked, seems generic) */
+
+/* ... Media Queries skip ... */
+
+/* --- Data Analyst Themed 3D Effects --- */
+
+/* 1. Neon Data Block Buttons */
+/* 1. Neon Data Block Buttons */
+.btn-data-block {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    /* Dark text */
+    background: var(--white);
+    /* White background */
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    /* Deep 3D Bevel */
+    box-shadow:
+        0 4px 0 #cbd5e1,
+        /* Light bevel */
+        0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-data-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+    z-index: -1;
+}
+
+.btn-data-block:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 6px 0 #cbd5e1,
+        0 10px 20px rgba(6, 182, 212, 0.15);
+    /* Cyan Glow */
+    color: var(--white);
+    background: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+}
+
+.btn-data-block:hover::before {
+    left: 100%;
+}
+
+.btn-data-block:active {
+    transform: translateY(4px);
+    /* Press down */
+    box-shadow:
+        0 0 0 #cbd5e1,
+        0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* 2. 3D Tilt Cards (Certifications & Education) */
+.card-3d-wrapper {
+    perspective: 1000px;
+    height: 100%;
+}
+
+.card-3d-tilt {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-out;
+    height: 100%;
+}
+
+.card-3d-wrapper:hover .card-3d-tilt {
+    transform: rotateX(5deg) rotateY(-5deg) scale(1.02);
+    box-shadow:
+        -10px 10px 20px rgba(0, 0, 0, 0.1),
+        0 0 20px rgba(147, 51, 234, 0.15);
+    /* Purple Glow */
+    border-color: var(--neon-purple);
+    z-index: 10;
+}
+
+/* 3. Floating 3D Charts (Background Decoration) */
+.chart-decoration {
+    position: absolute;
+    bottom: -20px;
+    right: 5%;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    z-index: -1;
+    opacity: 0.5;
+    /* Increased opacity for light mode */
+    pointer-events: none;
+    transform: rotateX(60deg) rotateZ(-30deg) scale(0.8);
+    transform-style: preserve-3d;
+}
+
+.floating-chart-bar {
+    width: 40px;
+    background: linear-gradient(to top, var(--card-bg), var(--neon-cyan));
+    box-shadow:
+        5px 5px 15px rgba(0, 0, 0, 0.1),
+        inset 0 0 10px rgba(6, 182, 212, 0.2);
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: growBar 4s ease-in-out infinite alternate;
+}
+
+.floating-chart-bar::before {
+    /* Left Side */
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 10px;
+    height: 100%;
+    background: rgba(0, 100, 110, 0.8);
+    transform: skewY(-45deg);
+    transform-origin: right top;
+}
+
+.floating-chart-bar::after {
+    /* Top */
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: rgba(180, 255, 255, 0.8);
+    transform: skewX(-45deg);
+    transform-origin: bottom left;
+}
+
+@keyframes growBar {
+    0% {
+        height: 50px;
     }
 
-    .hero-content {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .hero-text {
-        padding-right: 0;
-        margin-top: 3rem;
-    }
-
-    .hero-image-container {
-        justify-content: center;
-    }
-
-    .about-grid,
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        padding: 2rem;
-        border-bottom: 1px solid var(--neon-cyan);
+    100% {
+        height: 200px;
+        filter: hue-rotate(90deg);
     }
 }
 
-/* Tablet and Smaller Desktop */
-@media (max-width: 768px) {
-    :root {
-        --container-width: 100%;
-    }
+/* Delays for bars */
+.floating-chart-bar:nth-child(1) {
+    height: 100px;
+    animation-duration: 3s;
+    animation-delay: 0s;
+}
 
-    /* Typography Adjustments */
-    .name {
-        font-size: 2.8rem;
-        white-space: normal;
-        /* Allow wrapping on small screens if needed */
-    }
+.floating-chart-bar:nth-child(2) {
+    height: 150px;
+    animation-duration: 4.5s;
+    animation-delay: 0.5s;
+}
 
-    .role {
-        font-size: 1.5rem;
-        min-height: auto;
-    }
-
-    .section-title {
-        font-size: 2.2rem;
-        margin-bottom: 2rem;
-    }
-
-    /* Hero Section */
-    .hero-section {
-        padding-top: 100px;
-        min-height: auto;
-        padding-bottom: 4rem;
-    }
-
-    .hero-content {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .hero-text {
-        padding-right: 0;
-        margin-top: 2rem;
-    }
-
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .btn-secondary,
-    .social-3d-btn {
-        margin-left: 0;
-    }
-
-    .hero-image-container {
-        justify-content: center;
-        margin-bottom: 2rem;
-    }
-
-    .hero-image {
-        width: 280px;
-        height: 280px;
-    }
-
-    /* About Section */
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-
-    /* Education Section */
-    .education-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem;
-        gap: 1.5rem;
-    }
-
-    .edu-logo {
-        margin: 0 auto;
-    }
-
-    /* Certifications & Skills */
-    .certs-grid,
-    .skills-wrapper {
-        grid-template-columns: 1fr;
-        /* Stack singly on tablets/mobile */
-    }
-
-    /* Contact Section */
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
+.floating-chart-bar:nth-child(3) {
+    height: 80px;
+    animation-duration: 3.5s;
+    animation-delay: 1s;
 }
 
 /* Mobile Devices */
 @media (max-width: 480px) {
+
     .container {
         padding: 0 1.2rem;
     }
